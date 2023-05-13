@@ -1,8 +1,15 @@
- <svg
+import { JSX } from "preact";
+import { IS_BROWSER } from "$fresh/runtime.ts";
+interface myProps extends JSX.HTMLAttributes<SVGSVGElement> {
+  stroke?: string;
+}
+export function AyeohLogoSVG(props: myProps) {
+  return (
+    <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
-      class={`icon icon-tabler}
+      class={`icon icon-tabler ${props.stroke}`}
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -22,3 +29,5 @@
       <path d="M0,18.22c1.62,0,3.4-2.15,7.36-1.6S13.43,19.83,17.45,19c4.24-.75,7.47-5.3,4.32-9.17-4.21-4.29-9.43,3.88-16.56-2.3" />
       <path d="M11.54,12.79c.43-1.4.74-2.57,1-3.53,2-9-4.63-.64-6.08,3.6" />
     </svg>
+  );
+}
