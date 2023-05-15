@@ -5,8 +5,6 @@
 // await client.connectTLS({
 //     hostname: "smtp.gmail.com",
 //     port: 465,
-//     username: "teuchertb",
-//     password: "TheRockyHorrorShow47#",
 //   });
   
 //   await client.send({
