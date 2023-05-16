@@ -11,20 +11,23 @@ export const handler: Handlers = {
     if (!fullName || !email || !message) {
         console.warn(`this didn't work`)
         return new Response();
-
     }
+    console.debug('made it here')
+    console.log('made it here')
     
     const client = new SmtpClient();
     const env = await load();
     const username = env["USERNAME"];
     const password = env["PASSWORD"];
 
+    console.debug('got creds')
     await client.connectTLS({
       hostname: "email-smtp.us-east-1.amazonaws.com",
       port: 2465,
       username: username,
       password: password,
     });
+    console.debug('connected')
 
     await client.send({
       from: "ayeoh.dev@gmail.com", // Your Email address
@@ -33,7 +36,10 @@ export const handler: Handlers = {
       content: fullName + '<br/>'+email+ '<br/>'+message,
     });
 
+    console.debug('sent')
+
     await client.close();
+    console.debug('closed')
 
     const headers = new Headers(req.headers);
     headers.set("location","/");
