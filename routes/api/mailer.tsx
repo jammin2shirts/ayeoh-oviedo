@@ -8,7 +8,11 @@ export const handler: Handlers = {
     const fullName = form.get('fullName')?.toString()
     const email = form.get('email')?.toString()
     const message = form.get('message')?.toString()
-    if (!fullName || !email || !message) return new Response();
+    if (!fullName || !email || !message) {
+        console.warn(`this didn't work`)
+        return new Response();
+
+    }
     
     const client = new SmtpClient();
     const env = await load();
