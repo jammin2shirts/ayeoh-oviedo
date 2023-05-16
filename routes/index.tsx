@@ -7,11 +7,19 @@ export default function Home(ctx: PageProps) {
   const { url } = ctx;
   return (
     <>
-      <HeadElement url={url} title="Ayeoh | Home" description="desc" />
+      <HeadElement
+        url={url}
+        title="Ayeoh | Home"
+        description="Welcome to our web development business based in Oviedo, FL, where
+            we offer a range of services to help businesses and individuals
+            build a professional and effective online presence. Our team of
+            expert developers has the skills and experience to create custom
+            websites that are tailored to your unique needs and goals."
+      />
       <div class="p-4 mx-auto max-w-screen-md">
         <NavBar />
         <p class="my-6 text-5xl animate-appear relative">
-          Ayeoh Developer Services
+          Ayeoh Web Services
         </p>
 
         <div

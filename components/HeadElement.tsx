@@ -11,7 +11,7 @@ export function HeadElement({ description, image, title, url }: HeadProps) {
   return (
     <Head>
       <title>{title}</title>
-      <link rel="icon" href="/logo.ico" sizes="32x32" />
+      <link rel="icon" href="/ATent-01.svg" sizes="32x32" />
       <link rel="stylesheet" href="https://use.typekit.net/lds4gch.css" async>
       </link>
       <meta name="description" content={description} />
