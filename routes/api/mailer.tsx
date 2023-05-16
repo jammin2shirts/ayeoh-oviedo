@@ -23,7 +23,7 @@ export const handler: Handlers = {
     console.debug('got creds')
     await client.connectTLS({
       hostname: "email-smtp.us-east-1.amazonaws.com",
-      port: 465,
+      port: 2465,
       username: username,
       password: password,
     });
