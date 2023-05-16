@@ -21,9 +21,12 @@ export const handler: Handlers = {
     }
     console.debug('made it here')
 
-    const env = await load();
-    const username = env["USERNAME"];
-    const password = env["PASSWORD"];
+    const username = Deno.env.get("USERNAME");
+    const password =  Deno.env.get("PASSWORD");
+    if (!username || !password) {
+        console.warn(`env didn't work`)
+        return new Response();
+    }
     const client = new SMTPClient({
         connection: {
           hostname: "email-smtp.us-east-1.amazonaws.com",
@@ -36,6 +39,8 @@ export const handler: Handlers = {
         },
       });
       
+    // console.debug(username)
+    // console.debug(password)
     console.debug('connected')
       await client.send({
         from: "ayeoh.dev@gmail.com",
